@@ -51,7 +51,13 @@ git commit: "-m 'rake db create & migrate'"
 # deviseインストール
 generate 'devise:install'
 generate 'devise User'
-rake 'db:migrate'
 
 git add: '.'
 git commit: "-m 'devise install & set up for User model'"
+
+# db migrate
+rake 'db:migrate RAILS_ENV=development'
+rake 'db:migrate RAILS_ENV=test'
+
+git add :'.'
+git commit: "-m 'rake db migrate RAILS_ENV development & test'"
